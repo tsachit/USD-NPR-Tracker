@@ -1,18 +1,26 @@
-import pync
 import requests
 import sys
 import sched, time
 from datetime import datetime
+from notifypy import Notify
 
 # run interval in seconds
 interval = 300
 url = "https://api.transferwise.com/v3/comparisons?sourceCurrency=USD&targetCurrency=NPR&sendAmount=1"
 
+notification = Notify(
+  default_notification_title="USD-NPR Tracker",
+  default_application_name="USD-NPR Tracker",
+  default_notification_icon="./assets/logo.png",
+  default_notification_audio="./assets/sound.wav"
+)
+
 def notify(rate):
     if(len(sys.argv) > 1):
         threshold = float(sys.argv[1])
         if(rate > threshold):
-            pync.Notifier.notify(f"USD to NPR rate is now Rs.{rate}, i.e. above the limit Rs.{threshold}", title='USD Tracker')
+            notification.message = f"USD to NPR rate is now Rs.{rate}, i.e. above the limit Rs.{threshold}"
+            notification.send()
 
 def get_rate():
     response = requests.request("GET", url, headers={}, data={})

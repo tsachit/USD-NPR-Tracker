@@ -10,7 +10,6 @@ url = "https://api.transferwise.com/v3/comparisons?sourceCurrency=USD&targetCurr
 
 notification = Notify(
   default_notification_title="USD-NPR Tracker",
-  default_application_name="USD-NPR Tracker",
   default_notification_icon="./assets/logo.png",
   default_notification_audio="./assets/sound.wav"
 )

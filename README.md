@@ -1,4 +1,4 @@
-# USD-Tracker
+# USD-NPR-Tracker
 
 Just a simple tracker from **Transferwise** to fetch USD to NPR rate in every 5 minutes.
 

@@ -1,6 +1,6 @@
 # USD-Tracker
 
-Just a simple tracker to fetch USD to NPR rate in every 5 minutes.
+Just a simple tracker from **Transferwise** to fetch USD to NPR rate in every 5 minutes.
 
 
 ### Instruction

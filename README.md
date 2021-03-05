@@ -32,3 +32,7 @@ If you also want alert on above threshold value, try running like this
 python tracker.py 117
 ```
 This will send you push notification if USD-NPR rate is above Rs.117
+
+![Preview or running monitor](https://raw.githubusercontent.com/tsachit/USD-NPR-Tracker/main/preview.png)
+
+*Note: `usd` is my alias for `source venv/bin/activate && python tracker.py`. You can modify it to add folder location*

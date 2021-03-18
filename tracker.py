@@ -1,3 +1,4 @@
+import os
 import requests
 import sys
 import sched, time
@@ -7,11 +8,14 @@ from notifypy import Notify
 # run interval in seconds
 interval = 300
 url = "https://api.transferwise.com/v3/comparisons?sourceCurrency=USD&targetCurrency=NPR&sendAmount=1"
+script_dir = os.path.dirname(__file__)
+logo_path = 'assets/logo.png'
+sound_path = 'assets/sound.wav'
 
 notification = Notify(
   default_notification_title="USD-NPR Tracker",
-  default_notification_icon="./assets/logo.png",
-  default_notification_audio="./assets/sound.wav"
+  default_notification_icon=os.path.join(script_dir, logo_path),
+  default_notification_audio=os.path.join(script_dir, sound_path)
 )
 
 def notify(rate):
